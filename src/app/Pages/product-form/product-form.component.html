@@ -1,0 +1,38 @@
+<button type="button" class="btn btn-link mb-2 ms-2 mt-3" routerLink="">Accueil</button>
+<br>
+<div class="container mt-4">
+  <h2>Ajouter un Produit</h2>
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nom du produit</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="product.name"
+        name="name"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Prix</label>
+      <input
+        type="text"
+        id="price"
+        class="form-control"
+        [(ngModel)]="product.price"
+        name="price"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!productForm.valid"
+    >
+      Ajouter
+    </button>
+  </form>
+</div>
